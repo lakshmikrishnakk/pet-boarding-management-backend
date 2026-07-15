@@ -41,7 +41,10 @@ app.post("/add-pet", async (request, response) => {
     await course.create(request.body)
     response.json({"status":"success"})
 })
-
+app.post("/view-allpets", async (request, response) => {
+    const data = await course.find();
+    response.json(data);
+});
 
 
  app.listen(3000, () => {
